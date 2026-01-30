@@ -2,7 +2,79 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icon';
 
-// nice little chat animation to show the 2-way messaging flow
+// shows sent/delivered/read ticks
+const StatusIndicator = ({ status }: { status: string }) => {
+    const isRead = status === 'read';
+    const isDelivered = status === 'delivered' || isRead;
+    const color = isRead ? '#53bdeb' : '#94A3B8';
+
+    return (
+        <div className="flex items-center ml-1">
+            <svg className="w-4 h-4" viewBox="0 0 16 16" fill="none">
+                {/* First Check (appears when delivered) */}
+                <AnimatePresence>
+                    {isDelivered && (
+                        <motion.path
+                            key="check-1"
+                            d="M2 8.5L5 11.5L10.5 6"
+                            stroke={color}
+                            strokeWidth="1.8"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            animate={{ pathLength: 1, opacity: 1 }}
+                            transition={{ duration: 0.2 }}
+                        />
+                    )}
+                </AnimatePresence>
+
+                {/* Second/Main Check (always present after sent) */}
+                <motion.path
+                    animate={{
+                        d: isDelivered ? "M5.5 8.5L8.5 11.5L14 6" : "M4 8.5L7 11.5L12.5 6",
+                        stroke: color
+                    }}
+                    transition={{ duration: 0.2 }}
+                    d="M4 8.5L7 11.5L12.5 6"
+                    stroke={color}
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </svg>
+        </div>
+    );
+};
+
+// simple '...' bubble when someone is typing
+const TypingIndicator = () => (
+    <motion.div
+        initial={{ opacity: 0, y: 8 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.9 }}
+        transition={{ duration: 0.15 }}
+        className="flex gap-1 px-3 py-2.5 bg-white/[0.07] rounded-2xl rounded-bl-md border border-white/10"
+    >
+        {[0, 1, 2].map((i) => (
+            <motion.div
+                key={i}
+                animate={{
+                    y: [0, -4, 0],
+                    opacity: [0.4, 1, 0.4]
+                }}
+                transition={{
+                    duration: 0.6,
+                    repeat: Infinity,
+                    delay: i * 0.15,
+                    ease: "easeInOut"
+                }}
+                className="w-1.5 h-1.5 rounded-full bg-slate-400"
+            />
+        ))}
+    </motion.div>
+);
+
+// chat animation to show the 2-way messaging flow
 export const InstantMessagingAnimation = () => {
     const [messages, setMessages] = useState<any[]>([]);
     const [showTyping, setShowTyping] = useState<string | boolean>(false);
@@ -10,7 +82,7 @@ export const InstantMessagingAnimation = () => {
     const conversation = [
         { id: 1, text: "Hey! Schedule a brief meeting?", sender: "them", delay: 500 },
         { id: 2, text: "Yeah! What time works for you?", sender: "me", delay: 2300, readDelay: 3500 },
-        { id: 3, text: "How about 7pm?", sender: "them", delay: 4700 },
+        { id: 3, text: "How about 9am?", sender: "them", delay: 4700 },
         { id: 4, text: "Sounds good!", sender: "me", delay: 6500, readDelay: 7800 },
         { id: 5, text: "Perfect! I'll be there", sender: "them", delay: 8800 }
     ];
@@ -19,18 +91,18 @@ export const InstantMessagingAnimation = () => {
         const timers: any[] = [];
 
         conversation.forEach((msg) => {
-            // Show typing indicator
+            // typing indicator
             timers.push(setTimeout(() => {
                 setShowTyping(msg.sender);
             }, msg.delay - 200));
 
-            // Add message
+            // add message
             timers.push(setTimeout(() => {
                 setMessages(prev => [...prev, { ...msg, status: 'sent' }]);
                 setShowTyping(false);
             }, msg.delay));
 
-            // Update to delivered (for "me" messages)
+            // update to delivered (for "me" messages)
             if (msg.sender === 'me') {
                 timers.push(setTimeout(() => {
                     setMessages(prev => prev.map(m =>
@@ -38,7 +110,7 @@ export const InstantMessagingAnimation = () => {
                     ));
                 }, msg.delay + 150));
 
-                // Update to read
+                // update to read
                 if (msg.readDelay) {
                     timers.push(setTimeout(() => {
                         setMessages(prev => prev.map(m =>
@@ -49,7 +121,7 @@ export const InstantMessagingAnimation = () => {
             }
         });
 
-        // Reset animation
+        // reset animation
         timers.push(setTimeout(() => {
             setMessages([]);
         }, 9500));
@@ -57,98 +129,9 @@ export const InstantMessagingAnimation = () => {
         return () => timers.forEach(clearTimeout);
     }, []);
 
-    // shows sent/delivered/read ticks
-    const StatusIndicator = ({ status }: { status: string }) => {
-        if (!status || status === 'sent') {
-            return (
-                <motion.svg
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="w-3.5 h-3.5"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                >
-                    <motion.path
-                        d="M3 8L6 11L13 4"
-                        stroke="#94A3B8"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 0.15 }}
-                    />
-                </motion.svg>
-            );
-        }
-
-        if (status === 'delivered' || status === 'read') {
-            const color = status === 'read' ? '#22D3EE' : '#94A3B8';
-            return (
-                <motion.svg
-                    initial={{ scale: 0, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    className="w-3.5 h-3.5"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                >
-                    <motion.path
-                        d="M2 8L4.5 10.5L8 6"
-                        stroke={color}
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 0.15 }}
-                    />
-                    <motion.path
-                        d="M6 8L8.5 10.5L14 5"
-                        stroke={color}
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        initial={{ pathLength: 0 }}
-                        animate={{ pathLength: 1 }}
-                        transition={{ duration: 0.15, delay: 0.08 }}
-                    />
-                </motion.svg>
-            );
-        }
-        return null;
-    };
-
-    // simple '...' bubble when someone is typing
-    const TypingIndicator = () => (
-        <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.15 }}
-            className="flex gap-1 px-3 py-2.5 bg-white/[0.07] rounded-2xl rounded-bl-md border border-white/10"
-        >
-            {[0, 1, 2].map((i) => (
-                <motion.div
-                    key={i}
-                    animate={{
-                        y: [0, -4, 0],
-                        opacity: [0.4, 1, 0.4]
-                    }}
-                    transition={{
-                        duration: 0.6,
-                        repeat: Infinity,
-                        delay: i * 0.15,
-                        ease: "easeInOut"
-                    }}
-                    className="w-1.5 h-1.5 rounded-full bg-slate-400"
-                />
-            ))}
-        </motion.div>
-    );
-
     return (
         <div className="h-full flex items-center justify-center relative px-6">
-            {/* the actual message bubbles */}
+            {/* message bubbles */}
             <div className="w-full max-w-[340px] space-y-3">
                 <AnimatePresence mode="popLayout">
                     {messages.map((msg) => (
@@ -200,7 +183,7 @@ export const InstantMessagingAnimation = () => {
                         </motion.div>
                     ))}
 
-                    {/* Typing indicator */}
+                    {/* typing indicator */}
                     {showTyping && (
                         <motion.div
                             key="typing"
@@ -260,7 +243,7 @@ export const EncryptionAnimation = () => {
             }, 80);
         }, 800);
 
-        // Phase 2: Reset after showing encrypted
+        // phase 2: reset after showing encrypted
         const resetTimer = setTimeout(() => {
             setPhase(0);
             setDisplayText(plaintext);
@@ -276,7 +259,7 @@ export const EncryptionAnimation = () => {
 
     return (
         <div className="h-full flex flex-col items-center justify-center text-center relative">
-            {/* Shield with Lock */}
+            {/* shield with lock */}
             <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}

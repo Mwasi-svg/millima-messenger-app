@@ -154,7 +154,7 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
                                                             type="text"
                                                             required
                                                             disabled={status === 'loading'}
-                                                            placeholder="Jane Doe"
+                                                            placeholder="Your Name"
                                                             className="w-full px-4 py-3 text-sm rounded-xl bg-[#0B0F14] border border-white/10 focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 outline-none text-white placeholder:text-slate-600 transition-all"
                                                             value={formData.name}
                                                             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -172,7 +172,7 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
                                                                 type="email"
                                                                 required
                                                                 disabled={status === 'loading'}
-                                                                placeholder="name@company.com"
+                                                                placeholder="Your Email"
                                                                 className="w-full pl-10 pr-4 py-3 text-sm rounded-xl bg-[#0B0F14] border border-white/10 focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 outline-none text-white placeholder:text-slate-600 transition-all"
                                                                 value={formData.email}
                                                                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -190,7 +190,7 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
                                                                 name="phone"
                                                                 type="tel"
                                                                 disabled={status === 'loading'}
-                                                                placeholder="+1 (555) 000-0000"
+                                                                placeholder="+254 700 000 000"
                                                                 className="w-full pl-10 pr-4 py-3 text-sm rounded-xl bg-[#0B0F14] border border-white/10 focus:border-blue-500/50 focus:ring-1 focus:ring-blue-500/50 outline-none text-white placeholder:text-slate-600 transition-all"
                                                                 value={formData.phone}
                                                                 onChange={(e) => setFormData({ ...formData, phone: e.target.value })}

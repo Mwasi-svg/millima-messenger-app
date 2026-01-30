@@ -67,6 +67,14 @@ export const Header = () => {
 
                     {/* Desktop CTA + Mobile Hamburger */}
                     <div className="flex items-center gap-3">
+                        {/* Desktop CTA */}
+                        <a
+                            href="#platforms"
+                            className="hidden md:flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-4 py-2 rounded-xl text-sm font-medium transition-all hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-blue-500/25 border border-white/10"
+                        >
+                            <span>Download</span>
+                            <Icon icon="solar:arrow-right-linear" className="text-xs opacity-80" />
+                        </a>
 
                         {/* Hamburger Button - visible on mobile only */}
                         <button

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icon';
-import { Contact } from './Contact';
+import { Contact } from './contact_form';
 
 interface FAQItem {
     question: string;

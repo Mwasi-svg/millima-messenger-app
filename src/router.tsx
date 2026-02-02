@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { MainLayout } from './components/MainLayout';
+import { MainLayout } from './components/main_layout';
 
 export const router = createBrowserRouter([
     {
@@ -9,7 +9,7 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 lazy: async () => {
-                    const { HomePage } = await import('./pages/HomePage');
+                    const { HomePage } = await import('./pages/home_page');
                     return { Component: HomePage };
                 },
             },

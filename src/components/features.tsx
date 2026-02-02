@@ -1,5 +1,5 @@
 import { useRef, useEffect } from 'react';
-import { Card } from './Card';
+import { Card } from './card';
 
 export const Features = () => {
     const canvasRef = useRef<HTMLCanvasElement>(null);

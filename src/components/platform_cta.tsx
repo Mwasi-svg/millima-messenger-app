@@ -1,5 +1,5 @@
 import { motion, type Variants } from 'framer-motion';
-import { Icon } from '@iconify/react';
+import { Icon } from './icon';
 
 export const PlatformCTA = () => {
     const containerVariants: Variants = {
@@ -78,14 +78,14 @@ export const PlatformCTA = () => {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <a href="https://play.google.com/store/search?q=Blitz%20chat&c=apps" className="group flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                                     <Icon icon="simple-icons:googleplay" className="text-3xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                    <span className="text-base font-semibold text-white">Android</span>
-                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">Play Store</span>
+                                    <span className="text-base font-semibold text-white">Google Play Store</span>
+                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">Android</span>
                                 </a>
 
                                 <a href="https://apps.apple.com/us/app/blitz-chat/id6446266666" className="group flex flex-col items-center justify-center p-6 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                                     <Icon icon="simple-icons:appstore" className="text-3xl text-white mb-2 group-hover:scale-110 transition-transform" />
-                                    <span className="text-base font-semibold text-white">iOS</span>
-                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">App Store</span>
+                                    <span className="text-base font-semibold text-white">App Store</span>
+                                    <span className="text-[11px] text-blue-400 group-hover:text-blue-300 transition-colors">iOS</span>
                                 </a>
                             </div>
 
@@ -105,12 +105,38 @@ export const PlatformCTA = () => {
                             </div>
                         </motion.div>
 
-                        <motion.div variants={itemVariants} className="mt-8 flex flex-col lg:flex-row items-center lg:items-start gap-3">
-                            <Icon icon="solar:case-outline" className="text-xl text-blue-400" />
-                            <span className="text-sm text-slate-500">
-                                Need a 200% secure corporate solution? <br className="hidden lg:block" />
-                                <a href="mailto:corporate@blitz-chat.com" className="text-blue-400 hover:text-blue-300 transition-colors">Deploy our app on your corporate server.</a>
-                            </span>
+                        <motion.div variants={itemVariants} className="mt-12 flex flex-col items-center lg:items-start gap-6">
+                            <div className="flex flex-col sm:flex-row items-center gap-6">
+                                {/* Refined Premium Corporate Button */}
+                                <a href="mailto:corporate@blitz-chat.com" className="group flex items-center gap-5 p-5 pr-12 rounded-2xl bg-gradient-to-br from-[#0E1623] to-[#141d2e] border border-blue-500/20 hover:border-blue-500/40 shadow-[0_0_30px_rgba(59,130,246,0.05)] hover:shadow-[0_0_40px_rgba(59,130,246,0.15)] transition-all hover:-translate-y-1 relative overflow-hidden">
+                                    {/* Subtle Glass Tint */}
+                                    <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                                    <div className="relative z-10 text-white transition-colors group-hover:scale-110 duration-300">
+                                        <Icon icon="solar:case-bold" className="text-5xl" />
+                                    </div>
+
+                                    <div className="flex flex-col relative z-10">
+                                        <span className="text-[11px] font-bold text-blue-400/80 tracking-widest uppercase mb-1.5">Available for business</span>
+                                        <span className="text-2xl font-bold text-white tracking-tight">Corporate version</span>
+                                    </div>
+                                </a>
+
+                                <div className="hidden sm:block w-px h-16 bg-white/5 mx-2"></div>
+
+                                <div className="flex flex-col items-center lg:items-start space-y-2">
+                                    <div className="flex items-center gap-2">
+                                        <div className="p-1.5 rounded-lg bg-blue-500/10 border border-blue-500/20">
+                                            <Icon icon="solar:shield-check-bold" className="text-blue-400 text-lg" />
+                                        </div>
+                                        <span className="text-sm font-bold text-white tracking-wide">100% Secure Solution</span>
+                                    </div>
+                                    <p className="text-xs text-slate-500 max-w-[220px] leading-relaxed lg:text-left text-center">
+
+                                        Need a 200% secure corporate solution?. Deploy <span className="text-slate-400">Blitz</span> on your own private corporate servers.
+                                    </p>
+                                </div>
+                            </div>
                         </motion.div>
                     </motion.div>
                 </div>

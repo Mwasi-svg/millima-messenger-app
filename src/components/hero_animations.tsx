@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Icon } from './Icon';
+import { Icon } from './icon';
 
 // shows sent/delivered/read ticks
 const StatusIndicator = ({ status }: { status: string }) => {

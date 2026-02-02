@@ -1,7 +1,7 @@
-import { Hero } from '../components/Hero';
-import { Features } from '../components/Features';
-import { FAQ } from '../components/FAQ';
-import { PlatformCTA } from '../components/PlatformCTA';
+import { Hero } from '../components/hero';
+import { Features } from '../components/features';
+import { FAQ } from '../components/faq';
+import { PlatformCTA } from '../components/platform_cta';
 
 export const HomePage = () => {
     return (

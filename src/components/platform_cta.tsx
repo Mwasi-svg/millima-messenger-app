@@ -69,7 +69,7 @@ export const PlatformCTA = () => {
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                            Experience the power of Blitz on any device. <br className="hidden lg:block" />
+                            Experience the power of Millima Messenger on any device. <br className="hidden lg:block" />
                             Download on your preferred platform and stay connected anywhere.
                         </motion.p>
 
@@ -133,7 +133,7 @@ export const PlatformCTA = () => {
                                     </div>
                                     <p className="text-xs text-slate-500 max-w-[220px] leading-relaxed lg:text-left text-center">
 
-                                        Need a 200% secure corporate solution?. Deploy <span className="text-slate-400">Blitz</span> on your own private corporate servers.
+                                        Need a 200% secure corporate solution?. Deploy <span className="text-slate-400">Millima Messenger</span> on your own private corporate servers.
                                     </p>
                                 </div>
                             </div>

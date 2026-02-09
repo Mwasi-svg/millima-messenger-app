@@ -93,7 +93,7 @@ const FAQAccordionItem = ({ item, isOpen, onToggle }: { item: FAQItem; isOpen: b
                 onClick={onToggle}
                 className="w-full py-6 flex items-start justify-between gap-4 text-left group"
             >
-                <span className="text-lg font-medium text-white group-hover:text-blue-400 transition-colors flex-1">
+                <span className="text-lg font-medium text-white transition-colors flex-1">
                     {item.question}
                 </span>
                 <motion.div
@@ -101,7 +101,7 @@ const FAQAccordionItem = ({ item, isOpen, onToggle }: { item: FAQItem; isOpen: b
                     transition={{ duration: 0.2 }}
                     className="flex-shrink-0 mt-1"
                 >
-                    <Icon icon="solar:alt-arrow-down-linear" className="text-slate-400 group-hover:text-blue-400 transition-colors" />
+                    <Icon icon="solar:alt-arrow-down-linear" className="text-slate-400 transition-colors" />
                 </motion.div>
             </button>
             <AnimatePresence initial={false}>
@@ -124,6 +124,16 @@ const FAQAccordionItem = ({ item, isOpen, onToggle }: { item: FAQItem; isOpen: b
 };
 
 export const FAQ = () => {
+    const [openSections, setOpenSections] = useState<Record<number, boolean>>({
+        0: true,  // 1st category (security) is uncollapsed
+        1: false, // 2nd category (main functions) is collapsed
+        2: false  // 3rd category (Settings) is collapsed
+    });
+
+    const toggleSection = (index: number) => {
+        setOpenSections(prev => ({ ...prev, [index]: !prev[index] }));
+    };
+
     const [openItems, setOpenItems] = useState<Record<string, boolean>>({});
 
     const toggleItem = (sectionIndex: number, itemIndex: number) => {
@@ -134,7 +144,7 @@ export const FAQ = () => {
     const [isContactOpen, setIsContactOpen] = useState(false);
 
     return (
-        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-blitz-bg relative overflow-hidden">
+        <section className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-millimabg relative overflow-hidden">
             {/* some ambient light effects for depth */}
             <div className="absolute inset-0 bg-gradient-to-b from-transparent via-blue-500/5 to-transparent pointer-events-none"></div>
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none"></div>
@@ -160,36 +170,63 @@ export const FAQ = () => {
                 </div>
 
                 {/* actual faq categories */}
-                <div className="space-y-12">
-                    {faqData.map((section, sectionIndex) => (
-                        <motion.div
-                            key={section.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: sectionIndex * 0.1 }}
-                        >
-                            {/* category header (Security, Functions, etc) */}
-                            <div className="flex items-center gap-3 mb-6">
-                                <div className="w-1 h-6 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full"></div>
-                                <h3 className="text-2xl font-semibold text-white tracking-tight">
-                                    {section.title}
-                                </h3>
-                            </div>
+                <div className="space-y-6">
+                    {faqData.map((section, sectionIndex) => {
+                        const isSectionOpen = openSections[sectionIndex];
+                        return (
+                            <motion.div
+                                key={section.title}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                viewport={{ once: true }}
+                                transition={{ delay: sectionIndex * 0.1 }}
+                                className="group"
+                            >
+                                {/* category header (Security, Functions, etc) */}
+                                <button
+                                    onClick={() => toggleSection(sectionIndex)}
+                                    className="w-full flex items-center justify-between p-6 bg-white/[0.03] border border-white/10 rounded-2xl hover:bg-white/[0.05] transition-all text-left mb-2"
+                                >
+                                    <div className="flex items-center gap-4">
+                                        <div className="w-1.5 h-8 bg-gradient-to-b from-blue-500 to-cyan-500 rounded-full"></div>
+                                        <h3 className="text-2xl font-semibold text-white tracking-tight">
+                                            {section.title}
+                                        </h3>
+                                    </div>
+                                    <motion.div
+                                        animate={{ rotate: isSectionOpen ? 180 : 0 }}
+                                        transition={{ duration: 0.3 }}
+                                        className="h-10 w-10 rounded-xl bg-white/5 flex items-center justify-center text-slate-400 group-hover:text-white"
+                                    >
+                                        <Icon icon="solar:alt-arrow-down-linear" className="text-xl" />
+                                    </motion.div>
+                                </button>
 
-                            {/* the individual questions */}
-                            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 sm:p-6 backdrop-blur-sm">
-                                {section.items.map((item, itemIndex) => (
-                                    <FAQAccordionItem
-                                        key={itemIndex}
-                                        item={item}
-                                        isOpen={openItems[`${sectionIndex}-${itemIndex}`] || false}
-                                        onToggle={() => toggleItem(sectionIndex, itemIndex)}
-                                    />
-                                ))}
-                            </div>
-                        </motion.div>
-                    ))}
+                                <AnimatePresence initial={false}>
+                                    {isSectionOpen && (
+                                        <motion.div
+                                            initial={{ opacity: 0, height: 0 }}
+                                            animate={{ opacity: 1, height: 'auto' }}
+                                            exit={{ opacity: 0, height: 0 }}
+                                            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                                            className="overflow-hidden"
+                                        >
+                                            <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-4 sm:p-6 backdrop-blur-sm mb-6">
+                                                {section.items.map((item, itemIndex) => (
+                                                    <FAQAccordionItem
+                                                        key={itemIndex}
+                                                        item={item}
+                                                        isOpen={openItems[`${sectionIndex}-${itemIndex}`] || false}
+                                                        onToggle={() => toggleItem(sectionIndex, itemIndex)}
+                                                    />
+                                                ))}
+                                            </div>
+                                        </motion.div>
+                                    )}
+                                </AnimatePresence>
+                            </motion.div>
+                        );
+                    })}
                 </div>
 
                 {/* final cta if they're still confused */}

@@ -9,9 +9,9 @@ export const Footer = () => {
                     {/* Left Column: Branding & Navigation */}
                     <div className="flex flex-row items-center gap-6 md:gap-10 md:pr-20 md:-ml-12">
                         {/* Logo on the left */}
-                        <div className="shrink-0 h-28 sm:h-44 lg:h-56">
-                            <img src="/images/logo.png" alt="Blitz Logo" className="h-full w-auto object-contain" />
-                        </div>
+                        <a href="#home" className="shrink-0 h-28 sm:h-44 lg:h-56">
+                            <img src="/images/logo.png" alt="Millima Logo" className="h-full w-auto object-contain" />
+                        </a>
 
                         {/* Branding Content: Header aligned */}
                         <div className="flex flex-col">
@@ -28,25 +28,25 @@ export const Footer = () => {
                         {/* Info & Socials (Left Aligned) */}
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-col gap-2 text-sm font-medium text-slate-500">
-                                <a href="mailto:hello@blitz-chat.com" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+                                <a href="mailto:hello@millima-messenger.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                                     <Icon icon="solar:letter-linear" className="text-xl" />
-                                    hello@blitz-chat.com
+                                    hello@millima-messenger.com
                                 </a>
-                                <a href="tel:+15550002548" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+                                <a href="tel:+15550002548" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                                     <Icon icon="solar:phone-calling-linear" className="text-xl" />
-                                    +1 (555) 000-BLITZ
+                                    +1 (555) 000-MILLIMA
                                 </a>
                             </div>
                             <div className="flex flex-col gap-2 w-fit">
-                                <a href="https://www.instagram.com/" className="hover:text-white transition-colors flex items-center gap-2 w-fit text-sm font-medium text-slate-500">
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit text-sm font-medium text-slate-500">
                                     <Icon icon="lucide:instagram" className="text-xl" />
                                     Instagram
                                 </a>
-                                <a href="https://x.com/" className="hover:text-white transition-colors flex items-center gap-2 w-fit text-sm font-medium text-slate-500">
+                                <a href="https://x.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit text-sm font-medium text-slate-500">
                                     <Icon icon="lucide:twitter" className="text-xl" />
                                     Twitter (X)
                                 </a>
-                                <a href="https://www.facebook.com/" className="hover:text-white transition-colors flex items-center gap-2 w-fit text-sm font-medium text-slate-500">
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit text-sm font-medium text-slate-500">
                                     <Icon icon="lucide:facebook" className="text-xl" />
                                     Facebook
                                 </a>
@@ -55,7 +55,7 @@ export const Footer = () => {
 
                         {/* Navigation Links (Left Aligned) */}
                         <nav className="flex flex-col items-start gap-2 text-xs sm:text-sm font-bold text-slate-500 uppercase tracking-widest min-w-max">
-                            <a href="#" className="hover:text-white transition-colors">Home</a>
+                            <a href="#home" className="hover:text-white transition-colors">Home</a>
                             <a href="#features" className="hover:text-white transition-colors">Features</a>
                             <a href="#platforms" className="hover:text-white transition-colors">Download</a>
                             <a href="#contact" className="hover:text-white transition-colors">Contact</a>
@@ -68,7 +68,7 @@ export const Footer = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex justify-center mt-8 sm:mt-12">
                 <p className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">
-                    ©2026 Milima Technologies. All rights reserved.
+                    ©2026 Millima Technologies. All rights reserved.
                 </p>
             </div>
         </footer>

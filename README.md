@@ -1,5 +1,5 @@
-# Blitz Messaging App Landing Page
-Landing website page for Blitz Messaging application for Milima Technologies.
+# Millima Messenger Landing Page
+Landing website page for Millima Messenger application for Milima Technologies.
 
 # Overview
 This landing page is focused on:

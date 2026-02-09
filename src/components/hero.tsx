@@ -9,7 +9,7 @@ export const Hero = () => {
         {
 
             id: 1,
-            tag: "Milima Messenger",
+            tag: "Millima Messenger",
             title: "Messaging at ease on your device.",
             description: "Stay connected with seamless messaging in your workspace environment.",
             visual: "security",
@@ -55,7 +55,7 @@ export const Hero = () => {
     }, [activeSlide]);
 
     return (
-        <section id="home" className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] lg:h-screen pt-20 sm:pt-24 pb-8 sm:pb-12 flex flex-col justify-center overflow-hidden bg-blitz-bg">
+        <section id="home" className="relative min-h-[600px] sm:min-h-[700px] lg:min-h-[850px] lg:h-screen pt-20 sm:pt-24 pb-8 sm:pb-12 flex flex-col justify-center overflow-hidden bg-millimabg">
             {/* main background aesthetics */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 {/* base gradient */}
@@ -109,8 +109,8 @@ export const Hero = () => {
                                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-semibold tracking-tighter text-white leading-[1.1] sm:leading-[1.05] mb-4 sm:mb-6">
                                     {slides[activeSlide].title.split('\n').map((line, i) => (
                                         <span key={i} className="block">
-                                            {line.split(/(Blitz)/).map((part, index) => (
-                                                part === 'Blitz'
+                                            {line.split(/(Millima)/).map((part, index) => (
+                                                part === 'Millima'
                                                     ? <i key={index} className="italic text-blue-400">{part}</i>
                                                     : part
                                             ))}

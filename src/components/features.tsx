@@ -3,7 +3,7 @@ import { Card } from './card';
 export const Features = () => {
 
     return (
-        <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-blitz-bg relative z-0 overflow-hidden">
+        <section id="features" className="py-16 sm:py-24 lg:py-32 px-4 sm:px-6 bg-millimabg relative z-0 overflow-hidden">
             {/* those animated light beams */}
             <div className="absolute inset-0 bg-neutral-950">
                 <div className="relative w-full h-full">

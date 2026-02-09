@@ -50,7 +50,7 @@ export const PlatformCTA = () => {
                         <div className="relative flex justify-center lg:justify-start">
                             <img
                                 src="/images/platform.png"
-                                alt="Blitz Platform Interface"
+                                alt="Millima Platform Interface"
                                 className="w-[65%] lg:w-[75%] h-auto drop-shadow-2xl transform perspective-1000 rotate-y-3 hover:rotate-y-0 transition-transform duration-500"
                             />
                         </div>
@@ -76,28 +76,28 @@ export const PlatformCTA = () => {
                         <motion.div variants={itemVariants} className="w-full">
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-6">
                                 {/* Google Play */}
-                                <a href="https://play.google.com/store/search?q=Blitz%20chat&c=apps" className="group flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                                <a href="https://play.google.com/store/search?q=Millima%20Messenger&c=apps" className="group flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                                     <Icon icon="simple-icons:googleplay" className="text-4xl text-white mb-3 group-hover:scale-110 transition-transform" />
                                     <span className="text-lg font-semibold text-white">Google Play Store</span>
                                     <span className="text-xs text-blue-400 group-hover:text-blue-300 transition-colors">Android</span>
                                 </a>
 
                                 {/* App Store */}
-                                <a href="https://apps.apple.com/us/app/blitz-chat/id6446266666" className="group flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
+                                <a href="https://apps.apple.com/us/app/millima-messenger/id6446266666" className="group flex flex-col items-center justify-center p-8 bg-gradient-to-br from-[#0E1623] to-[#141d2e] hover:from-[#141d2e] hover:to-[#1c283d] border border-blue-500/20 hover:border-blue-500/40 rounded-2xl transition-all hover:-translate-y-1 shadow-[0_0_20px_rgba(59,130,246,0.1)]">
                                     <Icon icon="simple-icons:appstore" className="text-4xl text-white mb-3 group-hover:scale-110 transition-transform" />
                                     <span className="text-lg font-semibold text-white">App Store</span>
                                     <span className="text-xs text-blue-400 group-hover:text-blue-300 transition-colors">iOS</span>
                                 </a>
 
                                 {/* macOS */}
-                                <a href="https://apps.apple.com/us/mac/search?term=blitz%20chat" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
+                                <a href="https://apps.apple.com/us/mac/search?term=millima%20messenger" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
                                     <Icon icon="simple-icons:apple" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
                                     <span className="text-base font-medium text-slate-200 group-hover:text-white">macOS</span>
                                     <span className="text-xs text-slate-500 group-hover:text-slate-400">Universal Binary</span>
                                 </a>
 
                                 {/* Windows */}
-                                <a href="https://apps.microsoft.com/search?query=blitz+chat&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
+                                <a href="https://apps.microsoft.com/search?query=millima+messenger&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
                                     <Icon icon="simple-icons:microsoftstore" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
                                     <span className="text-base font-medium text-slate-200 group-hover:text-white">Windows</span>
                                     <span className="text-xs text-slate-500 group-hover:text-slate-400">10 & 11</span>
@@ -108,7 +108,7 @@ export const PlatformCTA = () => {
                         <motion.div variants={itemVariants} className="mt-12 w-full pt-10 border-t border-white/5">
                             <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
                                 {/* Corporate CTA Button */}
-                                <a href="mailto:corporate@blitz-chat.com" className="group relative w-full lg:w-auto flex items-center gap-6 p-6 pr-10 rounded-2xl bg-gradient-to-br from-[#0E1623] to-[#141d2e] border border-blue-500/20 hover:border-blue-500/40 shadow-xl transition-all hover:-translate-y-1 overflow-hidden">
+                                <a href="mailto:corporate@millima-messenger.com" className="group relative w-full lg:w-auto flex items-center gap-6 p-6 pr-10 rounded-2xl bg-gradient-to-br from-[#0E1623] to-[#141d2e] border border-blue-500/20 hover:border-blue-500/40 shadow-xl transition-all hover:-translate-y-1 overflow-hidden">
                                     <div className="absolute inset-0 bg-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                                     <div className="relative z-10 flex items-center justify-center w-14 h-14 rounded-xl bg-blue-500/10 text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all duration-300">
                                         <Icon icon="solar:case-bold" className="text-3xl" />

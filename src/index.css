@@ -2,9 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --millima-bg: #0B0F14;
+    --millima-panel: #0E1623;
+    --millima-border: #1C2330;
+}
+
 @layer base {
     body {
-        @apply bg-blitz-bg text-white antialiased;
+        background-color: var(--millima-bg);
+        @apply text-white antialiased;
     }
 }
 

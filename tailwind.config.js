@@ -7,9 +7,9 @@ export default {
     theme: {
         extend: {
             colors: {
-                'blitz-bg': '#0B0F14',
-                'blitz-panel': '#0E1623',
-                'blitz-border': '#1C2330',
+                'millimabg': 'var(--millima-bg)',
+                'millimapanel': 'var(--millima-panel)',
+                'millimaborder': 'var(--millima-border)',
             },
             fontFamily: {
                 sans: ['Inter', 'system-ui', 'sans-serif'],

@@ -28,7 +28,7 @@ export const Footer = () => {
                         {/* Info & Socials (Left Aligned) */}
                         <div className="flex flex-col gap-2">
                             <div className="flex flex-col gap-2 text-sm font-medium text-slate-500">
-                                <a href="mailto:hello@millima-messenger.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
+                                <a href="mailto:hello@milima-messenger.com" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                                     <Icon icon="solar:letter-linear" className="text-xl" />
                                     hello@millima-messenger.com
                                 </a>

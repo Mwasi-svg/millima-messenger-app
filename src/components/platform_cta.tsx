@@ -114,7 +114,7 @@ export const PlatformCTA = () => {
                                         <span className="text-[11px] font-bold text-blue-400 tracking-wider uppercase">100% Secure & Private</span>
                                     </div>
                                     <p className="text-sm text-slate-400 max-w-sm leading-relaxed lg:text-left text-center">
-                                        Deploy <span className="text-white font-medium">Millima Messaging</span> on your own private corporate servers for absolute data security and control.
+                                        Deploy <span className="text-white font-medium">Milima Messaging</span> on your own private corporate servers for absolute data security and control.
                                     </p>
                                 </div>
                             </div>

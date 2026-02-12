@@ -126,7 +126,7 @@ export const Contact = ({ isOpen, onClose }: ContactProps) => {
                                         <div className="rounded-2xl bg-[#0E1623]/80 backdrop-blur-md ring-1 ring-white/10 shadow-2xl p-6 sm:p-8">
                                             <div className="flex items-center justify-between mb-6">
                                                 <div>
-                                                    <p className="text-[11px] font-medium tracking-wider text-blue-400">Millima Support</p>
+                                                    <p className="text-[11px] font-medium tracking-wider text-blue-400">Milima Support</p>
                                                     <h3 className="mt-1 text-2xl font-semibold tracking-tight text-white">Get in touch</h3>
                                                 </div>
                                                 <div className="h-10 w-10 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center ring-1 ring-blue-500/20">

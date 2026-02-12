@@ -34,7 +34,7 @@ export const Footer = () => {
                                 </a>
                                 <a href="tel:+15550002548" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors flex items-center gap-2 w-fit">
                                     <Icon icon="solar:phone-calling-linear" className="text-xl" />
-                                    +1 (555) 000-MILLIMA
+                                    +1 (555) 000-MILIMA
                                 </a>
                             </div>
                             <div className="flex flex-col gap-2 w-fit">
@@ -68,7 +68,7 @@ export const Footer = () => {
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10 flex justify-center mt-8 sm:mt-12">
                 <p className="text-[10px] text-slate-500 font-mono uppercase tracking-widest">
-                    ©2026 Millima Technologies. All rights reserved.
+                    ©2026 Milima Technologies. All rights reserved.
                 </p>
             </div>
         </footer>

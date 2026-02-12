@@ -69,7 +69,7 @@ export const PlatformCTA = () => {
                         </motion.h2>
 
                         <motion.p variants={itemVariants} className="text-lg text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
-                            Experience the power of Millima Messaging on any device. <br className="hidden lg:block" />
+                            Experience the power of Milima Messaging on any device. <br className="hidden lg:block" />
                             Download on your preferred platform and stay connected anywhere.
                         </motion.p>
 
@@ -89,19 +89,7 @@ export const PlatformCTA = () => {
                                     <span className="text-xs text-blue-400 group-hover:text-blue-300 transition-colors">iOS</span>
                                 </a>
 
-                                {/* macOS */}
-                                <a href="https://apps.apple.com/us/mac/search?term=millima%20messenger" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                    <Icon icon="simple-icons:apple" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
-                                    <span className="text-base font-medium text-slate-200 group-hover:text-white">macOS</span>
-                                    <span className="text-xs text-slate-500 group-hover:text-slate-400">Universal Binary</span>
-                                </a>
 
-                                {/* Windows */}
-                                <a href="https://apps.microsoft.com/search?query=millima+messenger&hl=en-US&gl=KE" className="group flex flex-col items-center justify-center p-6 bg-[#0E1623]/60 hover:bg-[#1C2330] border border-white/5 hover:border-blue-500/30 rounded-2xl transition-all hover:-translate-y-1">
-                                    <Icon icon="simple-icons:microsoftstore" className="text-3xl text-slate-300 mb-2 group-hover:text-white transition-colors group-hover:scale-110 transition-transform" />
-                                    <span className="text-base font-medium text-slate-200 group-hover:text-white">Windows</span>
-                                    <span className="text-xs text-slate-500 group-hover:text-slate-400">10 & 11</span>
-                                </a>
                             </div>
                         </motion.div>
 

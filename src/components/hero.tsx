@@ -9,7 +9,7 @@ export const Hero = () => {
         {
 
             id: 1,
-            tag: "Millima Messenger",
+            tag: "Milima Messenger",
             title: "Messaging at ease on your device.",
             description: "Stay connected with seamless messaging in your workspace environment.",
             visual: "security",

@@ -55,7 +55,7 @@ export const Header = () => {
 
                         </div>
                         <span className="text-base sm:text-lg font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-white/80 tracking-tight hidden sm:block mb-1.5">
-                            Millima Messenger
+                            Milima Messenger
                         </span>
                     </a>
 

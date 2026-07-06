@@ -109,6 +109,7 @@ export const Footer = () => {
                 Contact
               </a>
               <Link
+                onClick={() => window.scrollTo({ top: 0, behavior: "auto" })}
                 to="/privacy-policy"
                 className="hover:text-white transition-colors"
               >

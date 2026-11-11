@@ -21,6 +21,13 @@ export const router = createBrowserRouter([
           return { Component: PrivacyPolicyPage };
         },
       },
+      {
+        path: "terms",
+        lazy: async () => {
+          const { TermsPage } = await import("./pages/terms_page");
+          return { Component: TermsPage };
+        },
+      },
     ],
   },
 ]);

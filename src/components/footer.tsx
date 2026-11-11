@@ -115,6 +115,13 @@ export const Footer = () => {
               >
                 Privacy Policy
               </Link>
+              <Link
+                onClick={() => window.scrollTo({ top: 0, behavior: "auto" })}
+                to="/terms"
+                className="hover:text-white transition-colors"
+              >
+                Terms of Use
+              </Link>
             </nav>
           </div>
         </div>
